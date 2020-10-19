@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agences",
+  "info": {
+    "name": "Agence"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "nom": {
+      "type": "string"
+    },
+    "lieu": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "string"
+    },
+    "agence": {
+      "type": "string"
+    },
+    "identifiant": {
+      "type": "string"
+    },
+    "pvd": {
+      "type": "string"
+    },
+    "photo_ext_agence": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "categorie": {
+      "model": "categorie",
+      "via": "agences"
+    }
+  }
+}
